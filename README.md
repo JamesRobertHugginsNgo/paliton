@@ -1,1 +1,1 @@
-# JavaScript Webpack Project Boilerplate
+# Paliton
