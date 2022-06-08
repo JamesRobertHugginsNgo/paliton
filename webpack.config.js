@@ -31,6 +31,17 @@ module.exports = (env, { mode }) => {
 					]
 				},
 				{
+					test: /\.s[ac]ss$/i,
+					use: [
+						// Creates `style` nodes from JS strings
+						'style-loader',
+						// Translates CSS into CommonJS
+						'css-loader',
+						// Compiles Sass to CSS
+						'sass-loader'
+					]
+				},
+				{
 					test: /\.(png|jpe?g|gif)$/i,
 					type: 'asset/resource',
 					generator: {
@@ -39,7 +50,13 @@ module.exports = (env, { mode }) => {
 				},
 				{
 					test: /\.svg$/i,
-					type: 'asset/inline'
+					loader: 'create-svg-loader',
+					resourceQuery: /create/
+				},
+				{
+					test: /\.svg$/i,
+					type: 'asset/inline',
+					resourceQuery: { not: [/create/] }
 				},
 				{
 					test: /\.(eot|ttf|woff|woff2)$/i,

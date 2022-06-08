@@ -17,8 +17,6 @@
 </head>
 
 <body>
-	<div id="app"></div>
-
 	<!-- SCRIPTS BEGIN -->
 	<% for (let index=0, length=htmlWebpackPlugin.files.js.length; index < length; index++) { %>
 	<script src="<%= htmlWebpackPlugin.files.js[index] %>"></script>

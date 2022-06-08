@@ -1,12 +1,5 @@
-export default function() {
-	const footer = document.createElement('footer');
+import { createElement as el } from 'create-html/dist/browser/es6-module/create-html';
 
-	const hr = document.createElement('hr');
-
-	const p = document.createElement('p');
-	p.textContent = 'All rights reserved.';
-
-	footer.append(hr, p);
-
-	return footer;
+export default function () {
+	return el('footer', null, el('p', null, 'Coded by James Robert Huggins Ngo'));
 }
